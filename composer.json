@@ -9,13 +9,5 @@
       "langdonglei\\annotation\\": "src",
       "langdonglei\\": "src/flags"
     }
-  },
-  "extra": {
-    "think": {
-      "config": {
-        "annotation": "confg/annotation.php",
-        "doc": "public/doc.php"
-      }
-    }
   }
 }
