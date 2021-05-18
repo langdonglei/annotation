@@ -1,13 +1,26 @@
 {
+  "name": "langdonglei/annotation",
+  "description": "",
   "require": {
     "doctrine/annotations": "^1.13"
   },
-  "name": "langdonglei/annotation",
-  "description": "",
   "autoload": {
     "psr-4": {
       "langdonglei\\annotation\\": "src",
       "langdonglei\\": "src/flags"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "test\\": "test"
+    }
+  },
+  "extra": {
+    "think": {
+      "config": {
+        "k1": "confg/annotation.php",
+        "k2": "public/doc.php"
+      }
     }
   }
 }

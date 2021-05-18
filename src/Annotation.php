@@ -5,10 +5,14 @@ namespace langdonglei\annotation;
 use Doctrine\Common\Annotations\AnnotationReader;
 use langdonglei\Doc;
 use ReflectionClass;
+use ReflectionException;
 
 class Annotation
 {
-    public function __invoke(string $class)
+    /**
+     * @throws ReflectionException
+     */
+    public function __construct(string $class)
     {
         $class  = new ReflectionClass($class);
         $reader = new AnnotationReader();
