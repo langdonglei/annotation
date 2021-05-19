@@ -14,13 +14,5 @@
     "psr-4": {
       "test\\": "test"
     }
-  },
-  "extra": {
-    "think": {
-      "config": {
-        "k1": "confg/annotation.php",
-        "k2": "public/doc.php"
-      }
-    }
   }
 }
