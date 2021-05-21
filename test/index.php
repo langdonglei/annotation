@@ -1,8 +1,8 @@
 <?php
 
-use langdonglei\annotation\Annotation;
+use langdonglei\Annotation;
 use test\Actor;
 
-include '../vendor/autoload.php';
+include 'bootstrap.php';
 
 new Annotation(Actor::class);

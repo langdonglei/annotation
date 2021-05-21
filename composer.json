@@ -6,8 +6,7 @@
   },
   "autoload": {
     "psr-4": {
-      "langdonglei\\annotation\\": "src",
-      "langdonglei\\": "src/flags"
+      "langdonglei\\": "src"
     }
   },
   "autoload-dev": {

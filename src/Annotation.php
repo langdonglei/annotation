@@ -1,9 +1,8 @@
 <?php
 
-namespace langdonglei\annotation;
+namespace langdonglei;
 
 use Doctrine\Common\Annotations\AnnotationReader;
-use langdonglei\Doc;
 use ReflectionClass;
 use ReflectionException;
 
