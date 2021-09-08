@@ -1,17 +1,9 @@
 {
   "name": "langdonglei/annotation",
   "description": "",
-  "require": {
-    "doctrine/annotations": "^1.13"
-  },
   "autoload": {
     "psr-4": {
       "langdonglei\\": "src"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "test\\": "test"
     }
   }
 }

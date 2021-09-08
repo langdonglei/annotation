@@ -2,27 +2,27 @@
 
 namespace langdonglei;
 
-use Doctrine\Common\Annotations\AnnotationReader;
-use ReflectionClass;
-use ReflectionException;
 
 class Annotation
 {
-    /**
-     * @throws ReflectionException
-     */
-    public function __construct(string $class)
+    public static function doc($dir)
     {
-        $class  = new ReflectionClass($class);
-        $reader = new AnnotationReader();
-        foreach ($class->getMethods() as $method) {
-            $obj = $reader->getMethodAnnotation($method, Doc::class);
-            if (isset($obj->des) && isset($obj->url) && isset($obj->method)) {
-                $eol = '<br>';
-                echo $eol;
-                echo '接口描述 : ' . $obj->des . $eol;
-                echo '请求地址 : ' . $obj->url . $eol;
-                echo '请求方法 : ' . $obj->method . $eol;
+        $items = glob($dir . DIRECTORY_SEPARATOR . '*');
+        foreach ($items as $item) {
+            if (is_dir($item)) {
+                static::doc($item);
+            }
+            $class = substr($item, strrpos($item, '/') + 1);
+            if (!preg_match('|^[A-Z].*\.php|', $class)) {
+                continue;
+            }
+            $contents = file_get_contents($item);
+            preg_match('|^ \* 地址.*$|m', $contents, $url);
+            preg_match('|^ \* 描述.*$|m', $contents, $des);
+            if (isset($url[0]) && isset($des[0])) {
+                echo '<pre>*</pre>';
+                echo '<pre>' . $url[0] . '</pre>';
+                echo '<pre>' . $des[0] . '</pre>';
             }
         }
     }
