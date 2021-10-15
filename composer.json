@@ -3,7 +3,8 @@
   "description": "",
   "autoload": {
     "psr-4": {
-      "langdonglei\\": "src"
+      "langdonglei\\": "src",
+      "test\\": "test"
     }
   }
 }
