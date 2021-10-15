@@ -21,13 +21,14 @@ class Annotation
                 continue;
             }
             $contents = file_get_contents($item);
-            preg_match('|^\s*\*\s?(地址.*)$|m', $contents, $url);
-            $url = $url[1] ?? '';
-            preg_match('|^\s*\*\s?(描述.*)$|m', $contents, $des);
-            $des = $des[1] ?? '';
-            if ($url && $des) {
+            preg_match('|^\s*\*\s?(地址\s?(.*))$|m', $contents, $matches_url);
+            $url_str = trim($matches_url[1]) ?? '';
+            $url_uri = trim($matches_url[2]) ?? '';
+            preg_match('|^\s*\*\s?(描述\s?.*)$|m', $contents, $matches_des);
+            $des = trim($matches_des[1]) ?? '';
+            if ($url_str && $url_uri && $des) {
                 echo '<pre/>';
-                echo '<div><a target="_blank" href="' . $url . '">' . $url . '</a></div>';
+                echo '<div><a target="_blank" href="' . $url_uri . '">' . $url_str . '</a></div>';
                 echo '<div>' . $des . '</div>';
             }
         }
